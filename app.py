@@ -14,7 +14,7 @@ def register():
     year = request.form['year']
 
     return render_template(
-        'successfull.html',
+        'sucess.html',
         name=name,
         year=year
     )
