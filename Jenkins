@@ -4,14 +4,14 @@ pipeline{
             stage('Build){
                 steps{
                     echo "Build Docker Image"
-                    bat "docker build -t app ."
+                    sh "docker build -t app ."
                 }
             }
             stage("Run"){
                 steps{
                     echo "Run application in docker container"
-                    bat "docker rm -f mycontainer || exit 0"
-                    bat "docker run -d -p 5001:5001 --name mycontainer app"
+                    sh "docker rm -f mycontainer || exit 0"
+                    sh "docker run -d -p 5001:5001 --name mycontainer app"
                 }
             }
         }
